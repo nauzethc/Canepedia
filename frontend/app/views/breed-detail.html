@@ -1,0 +1,12 @@
+<div class="hero-unit">
+    <h1>{{ breed.name }}</h1>
+    <p>Origin: {{ breed.origin }}</p>
+    <div ng-if="{{ showRelated }}">
+        <p>Related:</p>
+        <ul>
+            <li ng-repeat="rbreed in breed.related">
+                <a href="{{ rbreed }}">Otros</a>
+            </li>
+        </ul>
+    </div>
+</div>

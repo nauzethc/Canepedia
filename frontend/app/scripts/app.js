@@ -11,11 +11,22 @@ angular.module('Canfinder.clientApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/breeds', {
+        templateUrl: 'views/breed-list.html',
+        controller: 'BreedListCtrl'
+      })
+      .when('/breeds/:id', {
+        templateUrl: 'views/breed-detail.html',
+        controller: 'BreedDetailCtrl'
+      })
       .when('/families', {
-        templateUrl: 'views/families.html',
+        templateUrl: 'views/family-list.html',
         controller: 'FamilyCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .config(function ($httpProvider) {
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
   });

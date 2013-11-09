@@ -2,16 +2,12 @@
 
 angular.module('Canfinder.clientApp')
 
-    .factory('Family', ['$resource', function Family($resource) {
+    .factory('Family', ['$resource',
 
-        return $resource('http://localhost:8000/db/families/:familyId', {
+        function ($resource) {
+            return $resource('http://localhost\\:8000/db/families/:familyId', {}, {
+                query: { method: 'GET', params: { familyId: ''}, isArray: true }
+            });
+        }
 
-            'familyId': '@id'
-
-        }, {
-
-            query:   { method: 'GET' }
-
-        });
-
-    }]);
+    ]);
