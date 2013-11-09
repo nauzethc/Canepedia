@@ -18,11 +18,14 @@ class Dog(models.Model):
         Returns 'crossbreed' if it's true,
         first breed name otherwise
         '''
-        if self.crossbreed:
-            return '%s, %s' % (self.name, 'Crossbreed')
-        elif self.breed.count() > 0:
-            return '%s, %s' % (self.name, self.breed.first().name)
-        return self.name
+        if self.pk:
+            if self.crossbreed:
+                return '%s, %s' % (self.name, 'Crossbreed')
+            elif self.breed.count() > 0:
+                return '%s, %s' % (self.name, self.breed.first().name)
+        elif self.name:
+            return self.name
+        return 'Unknown'
 
 
 ## Groups
@@ -38,8 +41,9 @@ class Brood(models.Model):
         Returns 'crossbreed' if it's true,
         first breed name otherwise
         '''
-        if self.crossbreed:
-            return 'Crossbreed'
-        elif self.breed.count() > 0:
-            return self.breed.first().name
+        if self.pk:
+            if self.crossbreed:
+                return '%s, %s' % (self.name, 'Crossbreed')
+            elif self.breed.count() > 0:
+                return '%s, %s' % (self.name, self.breed.first().name)
         return 'Unknown'
