@@ -1,8 +1,6 @@
 'use strict';
 
 angular.module('Canfinder.clientApp')
-
-    .controller('FamilyCtrl', function ($scope, Family) {
-
+    .controller('FamilyListCtrl', function ($scope, Family) {
         $scope.families = Family.query();
-  });
+    });

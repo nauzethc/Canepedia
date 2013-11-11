@@ -24,7 +24,7 @@ class Breed(models.Model):
     name      = models.CharField(max_length=50)
     slug      = models.SlugField(max_length=50, null=True)
     origin    = models.CharField(max_length=50, blank=True)
-    family    = models.ManyToManyField(Family)
+    family    = models.ManyToManyField(Family, related_name='breeds')
     related   = models.ManyToManyField('self')
     wikipedia = models.URLField(blank=True)
 

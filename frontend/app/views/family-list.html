@@ -1,6 +1,11 @@
 <div class="hero-unit">
     <h1>Families</h1>
     <ul>
-        <li ng-repeat="family in families" id="{{family.id}}">{{family.name}}</li>
+        <li ng-repeat="family in families" id="{{family.id}}">{{family.name}}
+            <ul ng-if="{{family.breeds.lenght > 0}}">
+                <li ng-repeat="breed in family.breeds" id="{{ breed.id }}">
+                    <a href="/#/breeds/{{ breed.id }}/">{{breed.name}}</a>
+                </li>
+            </ul>
     </ul>
 </div>

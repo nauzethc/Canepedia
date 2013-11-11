@@ -21,7 +21,11 @@ angular.module('Canfinder.clientApp', [
       })
       .when('/families', {
         templateUrl: 'views/family-list.html',
-        controller: 'FamilyCtrl'
+        controller: 'FamilyListCtrl'
+      })
+      .when('/families/:id', {
+        templateUrl: 'views/family-detail.html',
+        controller: 'FamilyDetailCtrl'
       })
       .otherwise({
         redirectTo: '/'
