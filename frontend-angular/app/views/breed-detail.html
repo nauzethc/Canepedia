@@ -1,0 +1,20 @@
+<h1>{{ breed.name }}</h1>
+<p>Origin: {{ breed.origin }}</p>
+
+<div ng-show="showRelated">
+    <p>Related:</p>
+    <ul>
+        <li ng-repeat="rbreed in breed.related">
+            <a href="/#/breeds/{{ rbreed.id }}/">{{ rbreed.name }}</a>
+        </li>
+    </ul>
+</div>
+
+<div ng-show="showFamily">
+    <p>Family:</p>
+    <ul>
+        <li ng-repeat="family in breed.family">
+            <a href="/#/families/{{ family.id }}/">{{ family.name }}</a>
+        </li>
+    </ul>
+</div>
