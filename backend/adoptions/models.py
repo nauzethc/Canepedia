@@ -7,10 +7,10 @@ from database.models import Breed
 
 class Dog(models.Model):
     name       = models.CharField(max_length=50)
-    breed      = models.ManyToManyField(Breed)
+    breed      = models.ManyToManyField(Breed, blank=True, null=True)
     crossbreed = models.BooleanField(default=False)
     birth      = models.DateField(null=True, blank=True)
-    related    = models.ManyToManyField('self')
+    related    = models.ManyToManyField('self', blank=True, null=True)
     info       = models.TextField(blank=True)
 
     def __unicode__(self):
@@ -31,7 +31,7 @@ class Dog(models.Model):
 ## Groups
 
 class Brood(models.Model):
-    breed      = models.ManyToManyField(Breed)
+    breed      = models.ManyToManyField(Breed, blank=True, null=True)
     crossbreed = models.BooleanField(default=False)
     birth      = models.DateField(null=True)
     related    = models.ManyToManyField(Dog)

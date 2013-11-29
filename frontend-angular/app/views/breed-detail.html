@@ -1,5 +1,7 @@
 <h1>{{ breed.name }}</h1>
 <p>Origin: {{ breed.origin }}</p>
+<p>FCI: {{ breed.group }}</p>
+<p ng-if="breed.wikipedia"><a ng-href="{{ breed.wikipedia }}">Wikipedia</a></p>
 
 <div ng-show="showRelated">
     <p>Related:</p>

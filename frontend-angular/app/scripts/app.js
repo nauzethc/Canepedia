@@ -33,5 +33,11 @@ angular.module('canepediaClientApp', [
       });
   })
   .config(function ($httpProvider) {
-    delete $httpProvider.defaults.headers.common["X-Requested-With"];
+    //$sceDelegateProvider.resourceUrlWhitelist([
+    //  'self',
+    //  'http://127.0.0.1:8000/**',
+    //]);
+    //$httpProvider.defaults.useXDomain = true;
+    //$httpProvider.defaults.headers.post['X-CSRFToken'] = $cookiesProvider.csrftoken;
+    //$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   });

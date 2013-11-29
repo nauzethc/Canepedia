@@ -3,17 +3,25 @@ from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework import generics
 
-from database.models import Family, Breed
-from database.serializers import FamilySerializer, BreedSerializer
+from database.models import Family, Breed, FCIGroupSection
+from database.serializers import FamilySerializer, BreedSerializer, FCIGroupSectionSerializer
 
 
 ## Breeds
+
+class FCIGroupList(generics.ListCreateAPIView):
+    '''
+    List all FCI groups
+    '''
+    queryset         = FCIGroupSection.objects.all()
+    serializer_class = FCIGroupSectionSerializer
+
 
 class FamilyList(generics.ListCreateAPIView):
     '''
     List all breed families, or create new one
     '''
-    queryset         = Family.objects.all()
+    queryset         = Family.objects.order_by('group', 'section')
     serializer_class = FamilySerializer
 
 

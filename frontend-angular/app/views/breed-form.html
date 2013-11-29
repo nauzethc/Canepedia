@@ -1,0 +1,29 @@
+<form ng-controller="BreedFormCtrl" ng-submit="createBreed(form)">
+
+    <div class="form-row">
+        <label for="inputName">Name</label>
+        <input type="text" id="inputName" ng-model="form.name" required />
+    </div>
+
+    <div class="form-row">
+        <label for="inputOrigin">Origin</label>
+        <input type="text" id="inputOrigin" ng-model="form.origin" required />
+    </div>
+
+    <div class="form-row">
+        <label for="inputWikipedia">Wikipedia Link</label>
+        <input type="text" id="inputWikipedia" ng-model="form.wikipedia" />
+    </div>
+
+    <div class="form-row">
+        <label for="inputGroup">Group</label>
+        <select id="inputGroup" ng-model="form.group" required
+            ng-options="g.id as g.name for g in groups">
+        </select>
+    </div>
+
+    <div class="form-row">
+        <input type="submit" id="submit" value="Create" />
+    </div>
+
+</form>
