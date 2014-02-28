@@ -1,8 +1,12 @@
-<h1>Breeds</h1>
-<ul>
-    <li ng-repeat="breed in breeds">
-        <a href="/#/breeds/{{breed.id}}/">{{breed.name}}</a>
-    </li>
-</ul>
-
-<div ng-include="formTemplate"></div>
+<div class="row">
+    <div class="col-sm-8">
+        <ul>
+            <li ng-repeat="breed in breeds | orderBy:'name'">
+                <a href="/#/breeds/{{breed.id}}/">{{breed.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-4 content-related">
+        <div ng-include="formTemplate"></div>
+    </div>
+</div>

@@ -52,7 +52,7 @@ class Family(models.Model):
 
 class Breed(models.Model):
     name      = models.CharField(max_length=50)
-    slug      = models.SlugField(max_length=50, null=True)
+    slug      = models.SlugField(max_length=50, null=True, blank=True)
     origin    = models.CharField(max_length=50, blank=True)
     group     = models.ForeignKey(FCIGroupSection)
     related   = models.ManyToManyField('self', symmetrical=True, blank=True, null=True)

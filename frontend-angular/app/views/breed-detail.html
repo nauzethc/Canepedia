@@ -1,22 +1,25 @@
-<h1>{{ breed.name }}</h1>
-<p>Origin: {{ breed.origin }}</p>
-<p>FCI: {{ breed.group }}</p>
-<p ng-if="breed.wikipedia"><a ng-href="{{ breed.wikipedia }}">Wikipedia</a></p>
+<div class="row">
 
-<div ng-show="showRelated">
-    <p>Related:</p>
-    <ul>
-        <li ng-repeat="rbreed in breed.related">
-            <a href="/#/breeds/{{ rbreed.id }}/">{{ rbreed.name }}</a>
-        </li>
-    </ul>
-</div>
+    <div class="col-xs-4 col-md-3 col-lg-3">
+        <img src="holder.js/200x300" class="img-rounded" holderjs>
+    </div>
 
-<div ng-show="showFamily">
-    <p>Family:</p>
-    <ul>
-        <li ng-repeat="family in breed.family">
-            <a href="/#/families/{{ family.id }}/">{{ family.name }}</a>
-        </li>
-    </ul>
+    <div class="col-xs-8 col-md-6 col-lg-6">
+        <h3>{{ breed.name }}</h3>
+        <p>Origin: {{ breed.origin }}</p>
+        <p>FCI: {{ breed.group }}</p>
+        <p ng-if="breed.wikipedia"><a ng-href="{{ breed.wikipedia }}">Wikipedia</a></p>
+    </div>
+
+    <div class="col-xs-12 col-sm-8 col-md-3 col-lg-3">
+        <div ng-show="showRelated">
+            <p>Related:</p>
+            <ul>
+                <li ng-repeat="rbreed in breed.related">
+                    <a href="/#/breeds/{{ rbreed.id }}/">{{ rbreed.name }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 </div>

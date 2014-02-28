@@ -1,29 +1,29 @@
-<form ng-controller="BreedFormCtrl" ng-submit="createBreed(form)">
+<form name="breedForm" ng-controller="BreedFormCtrl" role="form" ng-submit="createBreed(form)">
 
-    <div class="form-row">
-        <label for="inputName">Name</label>
-        <input type="text" id="inputName" ng-model="form.name" required />
+    <div class="form-group">
+        <input class="form-control" type="text" id="inputName" ng-model="form.name" placeholder="Name" required />
     </div>
 
-    <div class="form-row">
-        <label for="inputOrigin">Origin</label>
-        <input type="text" id="inputOrigin" ng-model="form.origin" required />
+    <div class="form-group">
+        <input class="form-control" type="text" id="inputOrigin" ng-model="form.origin" placeholder="Origin" required />
     </div>
 
-    <div class="form-row">
-        <label for="inputWikipedia">Wikipedia Link</label>
-        <input type="text" id="inputWikipedia" ng-model="form.wikipedia" />
+    <div class="form-group">
+        <input class="form-control" type="text" id="inputWikipedia" ng-model="form.wikipedia" placeholder="Wikipedia Link" />
     </div>
 
-    <div class="form-row">
+    <div class="form-group">
         <label for="inputGroup">Group</label>
-        <select id="inputGroup" ng-model="form.group" required
+        <select class="form-control" id="inputGroup" ng-model="form.group" required
             ng-options="g.id as g.name for g in groups">
         </select>
     </div>
 
-    <div class="form-row">
-        <input type="submit" id="submit" value="Create" />
+    <div class="form-group">
+        <input class="btn btn-primary btn-block" type="submit" id="submit" value="Add" />
     </div>
 
+    <div class="alert" ng-show="alert.show" ng-class="alert.name">
+        {{ alert.message }}
+    </div>
 </form>

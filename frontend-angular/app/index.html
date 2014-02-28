@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -26,6 +27,31 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div class="container">
+
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Title -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Canepedia</a>
+        </div>
+
+        <!-- Navbar menu -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{active: nav == 'breeds'}">
+              <a href="/#/breeds/">Breeds</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main content -->
     <div class="container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -40,24 +66,23 @@
     </script>
 
 
-    <script src="bower_components/angular/angular.js"></script>
+
 
         <!-- build:js scripts/modules.js -->
+        <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/holderjs/holder.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/services/breed.js"></script>
-        <script src="scripts/services/family.js"></script>
+        <script src="scripts/services/group.js"></script>
         <script src="scripts/controllers/breed-list.js"></script>
         <script src="scripts/controllers/breed-detail.js"></script>
-        <script src="scripts/controllers/family-list.js"></script>
-        <script src="scripts/controllers/family-detail.js"></script>
-        <script src="scripts/services/group.js"></script>
         <script src="scripts/controllers/breed-form.js"></script>
         <!-- endbuild -->
 </body>

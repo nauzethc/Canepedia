@@ -53,3 +53,7 @@ class BreedSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Breed
+
+class BreedListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Breed
