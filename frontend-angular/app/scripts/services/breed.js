@@ -6,9 +6,9 @@ angular.module('canepediaClientApp')
 
         function Breed($resource) {
 
-            return $resource('http://localhost\\:8000/db/breeds/:breedId', {},
+            return $resource('http://localhost\\:8000/db/breeds/:breedSlug', {},
                 {
-                    query: { method: 'GET', params: { breedId: ''}, isArray: true }
+                    query: { method: 'GET', params: { breedSlug: ''}, isArray: true }
                 }
             );
         }

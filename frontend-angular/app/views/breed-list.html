@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-sm-8">
         <ul>
-            <li ng-repeat="breed in breeds | orderBy:'name'">
-                <a href="/#/breeds/{{breed.id}}/">{{breed.name}}</a>
+            <li ng-repeat="breed in breeds | orderBy:'name'" class="new-list-item-animation">
+                <a href="/#/breeds/{{breed.slug}}/">{{breed.name}}</a>
             </li>
         </ul>
     </div>

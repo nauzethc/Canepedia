@@ -14,4 +14,5 @@ urlpatterns = patterns('',
     # Breeds
     url(r'^breeds/?$',                  views.BreedList.as_view(),    name='breed-list'),
     url(r'^breeds/(?P<pk>[0-9]+)/?$',   views.BreedDetail.as_view(),  name='breed-detail'),
+    url(r'^breeds/(?P<slug>[-\w]+)/?$', views.BreedDetail.as_view(),  name='breed-detail-slug'),
 )

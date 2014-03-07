@@ -48,7 +48,7 @@ class BreedSerializer(serializers.ModelSerializer):
     #family  = serializers.HyperlinkedRelatedField(many=True, view_name='family-detail', read_only=True)
     #related = serializers.HyperlinkedRelatedField(many=True, view_name='breed-detail',  read_only=True)
     #family  = FamilyRelatedSerializer(many=True, required=False)
-    group   = serializers.CharField(source='get_group_name', read_only=True)
+    group_name = serializers.CharField(source='get_group_name', read_only=True)
     related = BreedRelatedSerializer(many=True, required=False)
 
     class Meta:

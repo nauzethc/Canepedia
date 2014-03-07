@@ -44,15 +44,14 @@ class Family(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        if self.slug == '':
-            self.slug = slugify(self.name)
+        self.slug = slugify(self.name)
         super(Family, self).save(*args, **kwargs)
 
 
 
 class Breed(models.Model):
     name      = models.CharField(max_length=50)
-    slug      = models.SlugField(max_length=50, null=True, blank=True)
+    slug      = models.SlugField(max_length=50, blank=True)
     origin    = models.CharField(max_length=50, blank=True)
     group     = models.ForeignKey(FCIGroupSection)
     related   = models.ManyToManyField('self', symmetrical=True, blank=True, null=True)
@@ -62,7 +61,7 @@ class Breed(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        if self.slug == '':
+        if not self.slug:
             self.slug = slugify(self.name)
         super(Breed, self).save(*args, **kwargs)
 

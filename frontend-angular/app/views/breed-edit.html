@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-xs-8 col-md-6 col-lg-6">
+
+        <form name="breedForm" role="form" ng-submit="updateBreed(form)">
+
+            <div class="form-group">
+                <label for="inputName">Name</label>
+                <input class="form-control" type="text" id="inputName" ng-model="form.name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="inputOrigin">Origin</label>
+                <input class="form-control" type="text" id="inputOrigin" ng-model="form.origin" required />
+            </div>
+
+            <div class="form-group">
+                <label for="inputWikipedia">Wikipedia</label>
+                <input class="form-control" type="text" id="inputWikipedia" ng-model="form.wikipedia" placeholder="Wikipedia Link" />
+            </div>
+
+            <div class="form-group">
+                <label for="inputGroup">Group</label>
+                <select class="form-control" id="inputGroup" ng-model="form.group" required
+                    ng-options="g.id as g.name for g in groups">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="inputRelated">Related</label>
+                <select multiple class="form-control" id="inputGroup" ng-model="form.related"
+                    ng-options="r.id as r.name for r in breeds | orderBy:'name'"></select>
+            </div>
+
+            <div class="form-group">
+                <input class="btn btn-primary btn-block" type="submit" id="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -4,7 +4,8 @@ angular.module('canepediaClientApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngAnimate'
 ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -18,9 +19,14 @@ angular.module('canepediaClientApp', [
         controller: 'BreedListCtrl',
         nav: 'breeds'
       })
-      .when('/breeds/:id', {
+      .when('/breeds/:slug', {
         templateUrl: 'views/breed-detail.html',
         controller: 'BreedDetailCtrl',
+        nav: 'breeds'
+      })
+      .when('/breeds/edit/:slug', {
+        templateUrl: 'views/breed-edit.html',
+        controller: 'BreedFormCtrl',
         nav: 'breeds'
       })
       .otherwise({
